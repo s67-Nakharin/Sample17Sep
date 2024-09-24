@@ -76,6 +76,8 @@ void match_check(int row1, int col1, int row2, int col2) {
     println("Matched!");
     first_click = false;
     gamelock = false;
+    point++;
+    if(point >= 6){gameover = true;}
   } else {
     println("Not Matched");
     revealCounter = revealTime; 
