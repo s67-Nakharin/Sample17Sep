@@ -9,6 +9,7 @@ boolean first_click = false;
 int row1, col1, row2, col2;
 int revealTime = 60; 
 int revealCounter = 0; 
+int point = 0;
 
 void setup() {
   size(500, 500);
