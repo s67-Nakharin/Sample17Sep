@@ -12,6 +12,15 @@ int revealCounter = 0;
 
 void setup() {
   size(500, 500);
+  int[] simNum = {1,1,2,2,3,3,4,4,5,5,6,6};
+  shuffleArray(simNum);
+  int index = 0;
+  for (int i = 0; i < grid.length; i++) {
+    for (int j = 0; j < grid[i].length; j++) {
+      grid[i][j] = simNum[index];
+      index++;
+    }
+  }
 }
 
 void draw() {
@@ -95,4 +104,13 @@ void revealLine(int row, int col) {
   int x = col * w + 20;  
   int y = row * h + 10;
   draw_lines(x, y, grid[row][col]);
+}
+
+void shuffleArray(int[] array) {
+  for (int i = array.length - 1; i > 0; i--) {
+    int index = int(random(i + 1)); 
+    int temp = array[i];
+    array[i] = array[index];
+    array[index] = temp;
+  }
 }
